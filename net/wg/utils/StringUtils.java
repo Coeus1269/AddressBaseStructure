@@ -13,8 +13,11 @@ public class StringUtils
 	
 	public static void main( String...args )
 	{
-		System.out.println( encodeURIComponent( "http://someserver.org/lost+found/file with spaces and a ?" ));
-		System.out.println(toHTML("\"Hello\" & GoodBye <> \n"));
+		System.out.println( "encodeURIComponent: " +encodeURIComponent( "http://someserver.org/lost+found/file with spaces and a ?" ));
+		System.out.println("to HTML: " + toHTML("\"Hello\" & GoodBye <> \n"));
+		System.out.println(toTitleCase("tEsTing TiTle cASE"));
+		System.out.println("Left Pad X: " + leftPad(" Kisses ", 3, "X", false));
+		System.out.println("Right Pad O: " + rightPad(" Hugs ", 3, "O", false));
 	}
 	
 	public static String safeSet( String src )
@@ -47,26 +50,43 @@ public class StringUtils
 			
 		}
 
-	public static String leftPad( String src, int length, String pad )
-		{ // left pads src with length number of pad characters
-			if (( src = safeSet( src )) != null )
+	public static String leftPad( String src_str, int length_int, String pad_str, boolean doTrim_b)
+		{ // left pads src_str to (length_int x pad_str) + src_str characters
+		// doTrim_b =  trim src_str or not
+		
+		if ( src_str != null)
 			{
-				while ( src.length() < length )
-					src = pad + src;
+				if (doTrim_b) // trims src_str
+				{
+					src_str = src_str.trim();
+				}
+				
+					// while ( src_str.length() < length_int )
+					for(int Loop_int = 0 ; Loop_int < length_int ;  Loop_int++ )
+						src_str = pad_str + src_str;
 			}
-			
-			return src;
+
+			return src_str;
 		}
 	
-	public static String rightPad( String src, int length, String pad )
-		{ // right pads src with length number of pad characters
-			if (( src = safeSet( src )) != null )
-			{		
-				while ( src.length() < length )
-					src = src + pad;
+	public static String rightPad( String src_str, int length_int, String pad_str, boolean doTrim_b )
+		{ // right pads src_str to  src_str + (length_int x pad_str) characters
+		// doTrim_b =  trim src_str or not
+		
+		if ( src_str != null)
+			{
+				if (doTrim_b) // trims src_str
+				{
+					src_str = src_str.trim();
+				}
+				for(int Loop_int = 0 ; Loop_int < length_int ;  Loop_int++ )
+					src_str = src_str + pad_str;
+				
+					//while ( src_str.length() < length_int )
+						
 			}
-			
-			return src;
+
+			return src_str;
 		}
 	
 	public boolean startsWith( String StringToCheck, String StartsWithString )
