@@ -1,0 +1,51 @@
+				Capital Cities 	Nicknames
+Alabama			Montgomery		Yellowhammer State
+Alaska			Juneau			The Last Frontier
+Arizona			Phoenix			The Grand Canyon State
+Arkansas		Little Rock		The Natural State
+California		Sacramento		The Golden State
+Colorado		Denver			The Centennial State
+Connecticut		Hartford		The Constitution State
+Delaware		Dover			The First State
+Florida			Tallahassee		The Sunshine State
+Georgia			Atlanta			The Peach State
+Hawaii			Honolulu		The Aloha State
+Idaho			Boise			The Gem State
+Illinois		Springfield		Prairie State
+Indiana			Indianapolis	The Hoosier State
+Iowa			Des Moines		The Hawkeye State
+Kansas			Topeka			The Sunflower State
+Kentucky		Frankfort		The Bluegrass State
+Louisiana		Baton Rouge		The Pelican State
+Maine			Augusta			The Pine Tree State
+Maryland		Annapolis		The Old Line State
+Massachusetts	Boston			The Bay State
+Michigan		Lansing			The Great Lakes State
+Minnesota		St. Paul		The North Star State
+Mississippi		Jackson			The Magnolia State
+Missouri		Jefferson City	The Show Me State
+Montana			Helena			The Treasure State
+Nebraska		Lincoln			The Cornhusker State
+Nevada			Carson City		The Silver State
+New Hampshire  	Concord			The Granite State
+New Jersey		Trenton			The Garden State
+New Mexico		Santa Fe		The Land of Enchantment
+New York		Albany			The Empire State
+North Carolina	Raleigh			The Tar Heel State
+North Dakota	Bismarck		The Peace Garden State
+Ohio			Columbus		The Buckeye State
+Oklahoma		Oklahoma City  	The Sooner State
+Oregon			Salem			The Beaver State
+Pennsylvania	Harrisburg		The Keystone State
+Rhode Island	Providence		The Ocean State
+South Carolina	Columbia		The Palmetto State
+South Dakota	Pierre			Mount Rushmore State
+Tennessee		Nashville		The Volunteer State
+Texas			Austin			The Lone Star State
+Utah			Salt Lake City	The Beehive State
+Vermont			Montpelier		The Green Mountain State
+Virginia		Richmond		The Old Dominion State
+Washington		Olympia			The Evergreen State
+West Virginia	Charleston		The Mountain State
+Wisconsin		Madison			The Badger State
+Wyoming			Cheyenne		The Equality or Cowboy State
