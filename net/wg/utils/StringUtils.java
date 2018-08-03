@@ -191,21 +191,27 @@ public class StringUtils
 //	    return titleCase.toString();
 //	}
 
-	public static String toTitleCase(String s) {
-
-	    final String ACTIONABLE_DELIMITERS = " '-/"; // these cause the character following
+	public static String toTitleCase(String s) 
+	{
+		// this function - credit to scottb on https://stackoverflow.com/questions/1086123/string-conversion-to-title-case
+		// will not work with specialized rules, eg. surnames such as McNamara or MacDonald.
+		// TODO: issue with street address parts like nw, se etc. 
+		
+	    final String ACTIONABLE_DELIMITERS = " -/"; // these cause the character following
 	                                                 // to be capitalized
 
 	    StringBuilder sb = new StringBuilder();
 	    boolean capNext = true;
 
-	    for (char c : s.toCharArray()) {
+	    for (char c : s.toCharArray()) 
+	    	{
 	        c = (capNext)
 	                ? Character.toUpperCase(c)
 	                : Character.toLowerCase(c);
 	        sb.append(c);
 	        capNext = (ACTIONABLE_DELIMITERS.indexOf((int) c) >= 0); // explicit cast not needed
-	    }
+	    	}
+
 	    return sb.toString();
 	}
 }
