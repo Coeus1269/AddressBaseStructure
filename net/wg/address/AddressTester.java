@@ -1,14 +1,15 @@
 package net.wg.address;
 
-import static org.junit.Assert.*;
-
-import org.junit.Test;
-
-public class AddressTest {
-
-	@Test
-	public void testIsAddressValid() {
-		fail("Not yet implemented");
+public class AddressTester 
+{
+	public static void main( String...args )
+	{
+	TestData();
+	}
+	
+	public static void TestData()
+	{
+		US_Address.TestData();
 	}
 
 }
