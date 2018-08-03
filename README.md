@@ -30,3 +30,20 @@ The initial version:
 
 Finally, this project will eventually include a complete database creation script that will also contain as much US 
 address data as possible. Such as zip codes, city and state names etc.
+
+Currently the "demonstration" version will do some RegEX validation on Street Address, City Name and Zip Code. States are puled from a text file.
+
+Incomplete ToDo's 
+  Address:
+    method to get a most likely address Line 1 when no match
+  Zip Code:
+    when validating a zip5 have this class pull from a data source that has all the valid zip5 & zip4
+    Pull actual address when provided Zip+4
+    Data source look up of Zip+4 to retreive city and state
+  City:
+    on city validation, pull from data source to validate of name, spelling, State, zipcode and county
+    Method for name misspelling correction, compare city text with misspelled list
+    ability to find city based on zip code
+  State:
+    state spelling errors check, compare state text with misspelled list
+    ability to find state based on zip code
