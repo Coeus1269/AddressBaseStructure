@@ -1,11 +1,14 @@
 # AddressBaseStructure
 Simplified project for processing US address
 
-The goal of this project is to incorporate data validation and standard relational database structure.
+The goal of this project is to incorporate data validation and standard relational database structure, for 
+United States addresses. A complete class structure that will validate and standardize a United States 
+address to fit US postal standards with as much validation as possible. 
+All into a class structure that is simple to set up and use. 
 
-into a class structure that is simple to use. There are many address elements that can benefit from 
-standardization, clean up or validation. Many of these areas will be addressed in an attempt to process
-address data to fit the US postal standards.
+There are many address elements that can benefit from standardization, clean up or validation. 
+Many of these areas will be addressed in an attempt to process address data to fit the 
+US postal standards.
 
 This project will attempt to implement data validation and cleaning for data elements like States standardization,
 Zip Code, City name and Street address validation.
