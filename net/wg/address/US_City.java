@@ -1,5 +1,7 @@
 package net.wg.address;
 
+import net.wg.utils.StringUtils;
+
 public class US_City 
 {
 	private int CityID;
@@ -31,7 +33,7 @@ public class US_City
 	public US_City(String CityName, String StateName, String ZipCode)
 		{
 			if(CityName != null && CityName.trim().length() > 0)
-				cityName = CityName.trim();
+				cityName = StringUtils.toTitleCase(CityName.trim());
 		
 			if(StateName != null && StateName.trim().length() > 0)
 				state = new US_State(StateName.trim());

@@ -47,7 +47,7 @@ public class US_Address
 		if (isAddressLine1Valid(AddressLine1))
 			setAddressLine1(AddressLine1);
 		
-		city = new US_City(CityString,StateString,ZipCodeString);
+		city = new US_City(CityString, StateString, ZipCodeString);
 		}
 	
     public boolean isAddressValid()
@@ -94,7 +94,7 @@ public class US_Address
 	
 	public static void TestData()
 		{
-			US_Address Addy = new US_Address("1234 NW This Way", "Oklahoma City", "OK", "73112-5120");
+			US_Address Addy = new US_Address("1234 NW This Way", "OkLaHoma City", "ok", "73112-5120");
 			
 			System.out.println(Addy.toString());
 						

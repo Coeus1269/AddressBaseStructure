@@ -8,7 +8,7 @@ import net.wg.utils.FileUtils;
 public class US_State 
 {
 	private String StateID;
-	private int stateIndex = 0;
+	private int stateIndex = 0;	// the index is the reference to the state name and abbreviation, not storing these strings.
 	private String StatesDataFile = "Data/US_States.txt";
 	private static String[][] AmericanStates = null; // format = Abbreviation, State name
 	// the StatesDataFile file has to keep the same order as the AmericanStates variable
@@ -66,8 +66,9 @@ public class US_State
 	
 	private static int getAmericanStatesIndex(String StateString)
 		{
+		// find the index for the state, the index
 		StateString = StateString.trim();
-		if(StateString.length() == 2)
+		if(StateString.length() == 2) // if only 2 char then this is probably the abbreviation
 			return getAmericanStateAbbrevIndex(StateString);
 		else
 			return getAmericanStateNameIndex(StateString);
@@ -78,7 +79,7 @@ public class US_State
 		{
 			for (int Index_int=0; Index_int < AmericanStates.length;  Index_int++)
 		        {
-					if(	StateName.equals(AmericanStates[Index_int][1]))
+					if(	StateName.equalsIgnoreCase(AmericanStates[Index_int][1]))
 							{
 							return Index_int;
 							}
@@ -90,7 +91,7 @@ public class US_State
 	{
 		for (int Index_int=0; Index_int < AmericanStates.length;  Index_int++)
 	        {
-				if(	StateAbbrev.equals(AmericanStates[Index_int][0]))
+				if(	StateAbbrev.equalsIgnoreCase(AmericanStates[Index_int][0]))
 						{
 						return Index_int;
 						}

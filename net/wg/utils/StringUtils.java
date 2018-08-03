@@ -11,6 +11,12 @@ public class StringUtils
 		{
 		}
 	
+	public static void main( String...args )
+	{
+		System.out.println( encodeURIComponent( "http://someserver.org/lost+found/file with spaces and a ?" ));
+		System.out.println(toHTML("\"Hello\" & GoodBye <> \n"));
+	}
+	
 	public static String safeSet( String src )
 	   { // if scr = null or empty returns null else returns src trimmed	
 		if ( "null".equals( src ))
@@ -159,11 +165,49 @@ public class StringUtils
 		    return result;
 		}
 	
-	public static void main( String...args )
-		{
-			System.out.println( encodeURIComponent( "http://someserver.org/lost+found/file with spaces and a ?" ));
-			System.out.println(toHTML("\"Hello\" & GoodBye <> \n"));
-		}
+//	public static String toTitleCase(String input_str) 
+//	{
+//	    StringBuilder titleCase = new StringBuilder();
+//	    boolean nextTitleCase = true;
+//
+//	    for (char c : input_str.toCharArray()) {
+//	        if (Character.isSpaceChar(c))  // if this char is a space, set the boolean to capitalize the next character
+//	        	{
+//	            nextTitleCase = true;
+//	        	} 
+//	        else if (nextTitleCase) 
+//	        	{
+//	            c = Character.toTitleCase(c);
+//	            nextTitleCase = false;
+//	        	}
+//	        else
+//	        	{// not a char to capitalize and not a space, then set it to lower case
+//	        	
+//	        	}
+//	        
+//	        titleCase.append(c);
+//	    }
+//
+//	    return titleCase.toString();
+//	}
+
+	public static String toTitleCase(String s) {
+
+	    final String ACTIONABLE_DELIMITERS = " '-/"; // these cause the character following
+	                                                 // to be capitalized
+
+	    StringBuilder sb = new StringBuilder();
+	    boolean capNext = true;
+
+	    for (char c : s.toCharArray()) {
+	        c = (capNext)
+	                ? Character.toUpperCase(c)
+	                : Character.toLowerCase(c);
+	        sb.append(c);
+	        capNext = (ACTIONABLE_DELIMITERS.indexOf((int) c) >= 0); // explicit cast not needed
+	    }
+	    return sb.toString();
+	}
 }
 
 
