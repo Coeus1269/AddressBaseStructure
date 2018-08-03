@@ -94,10 +94,10 @@ public class US_Address
 	
 	public static void TestData()
 		{
-			US_Address Addy = new US_Address("4433 NW 11th Terrace", "Oklahoma City", "OK", "73112-5120");
+			US_Address Addy = new US_Address("1234 NW This Way", "Oklahoma City", "OK", "73112-5120");
 			
 			System.out.println(Addy.toString());
-			
+						
 		}
     
 /* ------------------------------ Getters & Setters  ------------------------------ */
