@@ -23,7 +23,7 @@ that it contains. Reducing the knowledge and need for external action classes to
 For example: in this project  there is an address class that contains a City class. The City class contains a State Class and
 a ZipCode Class. Once the data sources are set up, i.e. databases, text files or other source for populating the class, 
 the developer shouldn't have to be concerned with how the city, states and zip code classes get populated. 
-They simply instantiate an Address class and the rest is handled in the back end.
+They simply instantiate an Address class and the rest is handled in the back end. The Address class instantiates a city class, and the City class instantiates the State and Zipcode classes.
 
 The initial version:
   The initial version contains the base class structure with many of the intended validation and standardizations included.There is a test class
