@@ -33,9 +33,9 @@ address data as possible. Such as zip codes, city and state names etc.
 
 Currently the "demonstration" version will do some RegEX validation on Street Address, City Name and Zip Code. States are pulled from a text file.
 
-Incomplete ToDo's 
+Incomplete ToDo's
   Address:
-    method to get a most likely address Line 1 when no match
+     method to get a most likely address Line 1 when no match
   Zip Code:
     when validating a zip5 have this class pull from a data source that has all the valid zip5 & zip4
     Pull actual address when provided Zip+4
