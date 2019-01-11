@@ -20,35 +20,29 @@ public class PhoneUtils
 	  System.out.println("is  8005551212 Tollfree number? " + PhoneUtils.isTollFreeNPA("8005551212"));
 	  System.out.println("is     5551212 Tollfree number? " + PhoneUtils.isTollFreeNPA("5551212"));
 	  
+	  System.out.println("Format 18005551212: " + PhoneUtils.FormatPhoneNumber("18005551212"));
+	  System.out.println("Format  8005551212: " + PhoneUtils.FormatPhoneNumber("8005551212"));
+	  System.out.println("Format     5551212: " + PhoneUtils.FormatPhoneNumber("5551212"));
+	  
+	  System.out.println("unFormat 1(800)555-1212: " + PhoneUtils.unFormatPhoneNumber("1(800)555-1212"));
+	  System.out.println("unFormat  (800)555-1212: " + PhoneUtils.unFormatPhoneNumber("(800)555-1212"));
+	  System.out.println("unFormat       555-1212: " + PhoneUtils.unFormatPhoneNumber("555-1212"));
+	  
+	  System.out.println("Is DA 18005551212: " + PhoneUtils.isDirectoryAssist("18005551212"));
+	  System.out.println("Is DA  8005551212: " + PhoneUtils.isDirectoryAssist("8005551212"));
+	  System.out.println("Is DA     5551212: " + PhoneUtils.isDirectoryAssist("5551212"));
+	  
+	  System.out.println("Is valid NPA 18005551212: " + PhoneUtils.isValidNPA("18005551212"));
+	  System.out.println("Is valid NPA  8005551212: " + PhoneUtils.isValidNPA("8005551212"));
+	  System.out.println("Is valid NPA     5551212: " + PhoneUtils.isValidNPA("5551212"));
+	  System.out.println("Is valid NPA  9115551212: " + PhoneUtils.isValidNPA("9115551212"));
+	  
+	  System.out.println("Is valid NXX 18005551212: " + PhoneUtils.isValidNXX("18005551212"));
+	  System.out.println("Is valid NXX  8005551212: " + PhoneUtils.isValidNXX("8005551212"));
+	  System.out.println("Is valid NXX     5551212: " + PhoneUtils.isValidNXX("5551212"));
+	  System.out.println("Is valid NXX     0551212: " + PhoneUtils.isValidNXX("0551212"));
 	}
-  
 
-   public static boolean is700Number(String PhoneNumber)
-	   {
-	       String npa = getNPA(PhoneNumber);
-	       return "700".equals( npa );
-	   }
-
-   public static boolean is900Number(String PhoneNumber)
-	   {
-	       String npa = getNPA(PhoneNumber);
-	       return "900".equals( npa );
-	   }
-
-   public static boolean isDirectoryAssist(String PhoneNumber)
-	   {
-	       if ( StringUtils.StringNotEmptyAndNotNull(PhoneNumber))
-	       		{
-	    	   if (PhoneNumber.length()==11)
-	    		   return ( PhoneNumber.indexOf( "555121" ) == 4 );
-	    	   if (PhoneNumber.length()==10)
-	    		   return ( PhoneNumber.indexOf( "555121" ) == 3 );
-	    	   else
-	    		   return ( PhoneNumber.indexOf( "555121" ) == 0 );
-	       	}
-	       
-	       return false;
-	   }
 
    public static String stripLeadingZeros(String PhoneNumber)
 		{
@@ -59,54 +53,7 @@ public class PhoneUtils
 			
 			return PhoneNumber;
 		}
-
-   public static boolean isValidNPA(String PN)
-	   {
-		   String npa = PhoneUtils.getNPA(PN).trim();
-		   
-		   if(npa.length() < 3)
-			   return false;
-			   
-		   if ( npa.indexOf("0") == 0 || npa.indexOf("0") == 0)
-	           return false; // NPAs do not permit the digits 0 and 1 as the leading digit of an area code
-		   
-		   if (npa.equals("911") || npa.equals("411") || npa.equals("611"))
-			   return false;// Reserved services numbers
-		   
-		   return true;
-	   }
    
-   public static boolean isValidNXX(String PN)
-	   {
-		   String nxx = PhoneUtils.getNXX(PN).trim();
-		   
-		   if(nxx.length() < 3)
-			   return false;
-		   
-		   if ( nxx.indexOf("0") == 0 || nxx.indexOf("0") == 1)
-	           return false; // NPXs do not permit the digits 0 and 1 as the leading digit
-		   
-		   if (nxx.equals("911")  || nxx.equals("411") || nxx.equals("611"))
-			   return false; // Reserved services numbers
-	
-		   return true;	   
-	   }
-   
-   
-   
-   public String getNpaNxx(String PhoneNumber)
-		{
-			String npa = getNPA(PhoneNumber),
-				   nxx = getNXX(PhoneNumber);
-	
-			if ( npa == null )
-				npa = "   ";
-	
-			if ( nxx == null )
-				nxx = "   ";
-	
-			return npa + nxx;
-		}
    
    public static boolean isValid10DigitPhoneNumber(String PN)
 	   {
@@ -199,7 +146,7 @@ public class PhoneUtils
 	}
 
    
-   /* -------------------------------- Getters & Setters  -------------------------------- */
+ /* -------------------------------- Getters & Setters  -------------------------------- */
 
    public static boolean isTollFreeNPA(String PhoneNumber)
 	   {
@@ -242,6 +189,83 @@ public static String getNXX(String PhoneNumber)
    	else
    		return "";
    }
+
+
+public static boolean is700Number(String PhoneNumber)
+	{
+	    String npa = getNPA(PhoneNumber);
+	    return "700".equals( npa );
+	}
+
+public static boolean is900Number(String PhoneNumber)
+	{
+	    String npa = getNPA(PhoneNumber);
+	    return "900".equals( npa );
+	}
+
+
+public static boolean isDirectoryAssist(String PhoneNumber)
+	{
+	    if ( StringUtils.StringNotEmptyAndNotNull(PhoneNumber))
+	    		{
+	 	   if (PhoneNumber.length()==11)
+	 		   return ( PhoneNumber.indexOf( "555121" ) == 4 );
+	 	   if (PhoneNumber.length()==10)
+	 		   return ( PhoneNumber.indexOf( "555121" ) == 3 );
+	 	   else
+	 		   return ( PhoneNumber.indexOf( "555121" ) == 0 );
+	    	}
+	    
+	    return false;
+	}
+
+
+public static boolean isValidNXX(String PN_str)
+	{
+		   String nxx = PhoneUtils.getNXX(PN_str).trim();
+		   
+		   if(nxx.length() < 3)
+			   return false;
+		   
+		   if ( nxx.indexOf("0") == 0 || nxx.indexOf("1") == 0)
+	        return false; 		// NPXs do not permit the digits 0 and 1 as the leading digit
+		   
+		   if (nxx.equals("911")  || nxx.equals("411") || nxx.equals("611"))
+			   return false;		// Reserved services numbers
+	
+		   return true;	   
+	}
+
+
+public static boolean isValidNPA(String PN_str)
+	{
+		   String npa = PhoneUtils.getNPA(PN_str).trim();
+		   
+		   if(npa.length() < 3)
+			   return false;
+			   
+		   if ( npa.indexOf("0") == 0 || npa.indexOf("1") == 0)
+	        return false; 			// NPAs do not permit the digits 0 and 1 as the leading digit of an area code
+		   
+		   if (npa.equals("911") || npa.equals("411") || npa.equals("611"))
+			   return false;			// Reserved services numbers
+		   
+		   return true;
+	}
+
+public String getNpaNxx(String PhoneNumber)
+	{
+		String npa = getNPA(PhoneNumber),
+			   nxx = getNXX(PhoneNumber);
+
+		if ( npa == null )
+			npa = "   ";
+
+		if ( nxx == null )
+			nxx = "   ";
+
+		return npa + nxx;
+	}
 
    /* ------------------------------ End Getters & Setters  ------------------------------ */
 }
