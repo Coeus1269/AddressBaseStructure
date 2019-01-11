@@ -38,7 +38,14 @@ public class PhoneUtils
    public static boolean isDirectoryAssist(String PhoneNumber)
 	   {
 	       if ( StringUtils.StringNotEmptyAndNotNull(PhoneNumber))
-			   return ( PhoneNumber.indexOf( "555121" ) == 3 );  // TODO doesnt work for 7 digit number
+	       		{
+	    	   if (PhoneNumber.length()==11)
+	    		   return ( PhoneNumber.indexOf( "555121" ) == 4 );
+	    	   if (PhoneNumber.length()==10)
+	    		   return ( PhoneNumber.indexOf( "555121" ) == 3 );
+	    	   else
+	    		   return ( PhoneNumber.indexOf( "555121" ) == 0 );
+	       	}
 	       
 	       return false;
 	   }
