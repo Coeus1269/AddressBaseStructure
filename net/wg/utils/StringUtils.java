@@ -12,13 +12,13 @@ public class StringUtils
 		}
 	
 	public static void main( String...args )
-	{
-		System.out.println( "encodeURIComponent: " +encodeURIComponent( "http://someserver.org/lost+found/file with spaces and a ?" ));
-		System.out.println("to HTML: " + toHTML("\"Hello\" & GoodBye <> \n"));
-		System.out.println(toTitleCase("tEsTing TiTle cASE"));
-		System.out.println("Left Pad X: " + leftPad(" Kisses ", 3, "X", false));
-		System.out.println("Right Pad O: " + rightPad(" Hugs ", 3, "O", false));
-	}
+		{ 	System.out.println( "encodeURIComponent: " +encodeURIComponent( "http://someserver.org/lost+found/file with spaces and a ?" ));
+			System.out.println("to HTML: " + toHTML("\"Hello\" & GoodBye <> \n"));
+			System.out.println(toTitleCase("tEsTing TiTle cASE"));
+			System.out.println("Left Pad X: " + leftPad(" Kisses ", 3, "X", false));
+			System.out.println("Right Pad O: " + rightPad(" Hugs ", 3, "O", false));
+			System.out.println("Strip ass from assassin: " + stripLeading("assassin","ass"));
+		}
 	
 	public static String safeSet( String src )
 	   { // if scr = null or empty returns null else returns src trimmed	
@@ -182,6 +182,15 @@ public class StringUtils
 	
 		    return sb.toString();
 		}
+	
+	
+	public static String stripLeading(String Value_str, String ToStrip_str)
+		{	while( Value_str.startsWith( ToStrip_str ))
+				Value_str = Value_str.substring( ToStrip_str.length() );
+
+			return Value_str;
+		}
+
 	
 	/* -------------------------------- Getters & Setters  -------------------------------- */
 
