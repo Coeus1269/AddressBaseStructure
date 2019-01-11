@@ -54,7 +54,7 @@ public class US_Address
 	    {
 	    	// all the following fields must be present to be valid at a minimum
 	
-	    	if ( StringUtils.isEmpty( addressLine1 ) )
+	    	if ( StringUtils.isEmptyString( addressLine1 ) )
 		   		return false;
 	
 			if(!city.isCityValid())
@@ -95,6 +95,10 @@ public class US_Address
 	public static void TestData()
 		{
 			US_Address Addy = new US_Address("1234 NW This Way", "OkLaHoma City", "ok", "73112-5120");
+			
+			System.out.println(Addy.toString());
+			
+			Addy = new US_Address("1234 NW that Way", "OkLaHoma City", "oklahoma", "73112");
 			
 			System.out.println(Addy.toString());
 						

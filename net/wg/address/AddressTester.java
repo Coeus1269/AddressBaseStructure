@@ -16,6 +16,6 @@ public class AddressTester
 		System.out.println(StringUtils.toTitleCase("hey there ya'll"));
 		System.out.println(StringUtils.toTitleCase("hello"));
 		System.out.println(StringUtils.toTitleCase("tEsTing TiTle cASE"));
-	}
 
+	}
 }

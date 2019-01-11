@@ -74,7 +74,7 @@ public class US_ZipCode
 		// valid zip is 5 digits only
 		Zip5 = Zip5.trim();
 		
-		if(StringUtils.isEmpty(Zip5))
+		if(StringUtils.isEmptyString(Zip5))
 			return false;
 		
 		return Zip5.matches("^\\d{5}$");
@@ -97,7 +97,7 @@ public class US_ZipCode
 			// valid +4 is 4 digits only
 			Zip4 = Zip4.trim();
 			
-			if(StringUtils.isEmpty(Zip4))
+			if(StringUtils.isEmptyString(Zip4))
 				return false;
 			
 			return Zip4.matches("^\\d{4}$");
@@ -105,12 +105,12 @@ public class US_ZipCode
 	
 	public boolean isZip5Empty()
 		{
-			return StringUtils.isEmpty( zip5 );
+			return StringUtils.isEmptyString( zip5 );
 		}
 	
 	public boolean isZip4Empty()
 		{
-			return StringUtils.isEmpty( zip4 );
+			return StringUtils.isEmptyString( zip4 );
 		}
 	
 	@Override

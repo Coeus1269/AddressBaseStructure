@@ -6,7 +6,7 @@ public class PhoneUtils
   public static void main(String[] args) 
 	{
 	  // Self Tester
-	  PhoneUtils PU = new PhoneUtils();
+	  //PhoneUtils PU = new PhoneUtils();
 	  
 	  System.out.println("NPA of 18005551212: " + PhoneUtils.getNPA("18005551212"));
 	  System.out.println("NPA of  8005551212: " + PhoneUtils.getNPA("8005551212"));

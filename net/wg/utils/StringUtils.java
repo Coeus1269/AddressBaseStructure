@@ -39,11 +39,6 @@ public class StringUtils
 			return ( src == null ? "" : src );
 		}
 	
-	public static boolean isEmpty( String src )
-		{ // if scr = empty string or null returns true
-			return safeSet( src ) == null;
-		}
-
 	public static boolean isEmptyString(String value_str)
 		{ // if value_str = empty string or null returns true
 			return ( value_str == null || value_str.trim().equals( "" ) );
@@ -55,17 +50,13 @@ public class StringUtils
 		// doTrim_b =  trim src_str or not
 		
 		if ( src_str != null)
-			{
-				if (doTrim_b) // trims src_str
-				{
-					src_str = src_str.trim();
-				}
+			{ if (doTrim_b) // trims src_str
+					{ src_str = src_str.trim();	}
 				
 					// while ( src_str.length() < length_int )
 					for(int Loop_int = 0 ; Loop_int < length_int ;  Loop_int++ )
 						src_str = pad_str + src_str;
 			}
-
 			return src_str;
 		}
 	
@@ -74,29 +65,21 @@ public class StringUtils
 		// doTrim_b =  trim src_str or not
 		
 		if ( src_str != null)
-			{
-				if (doTrim_b) // trims src_str
-				{
-					src_str = src_str.trim();
-				}
+			{ if (doTrim_b) // trims src_str
+				{ src_str = src_str.trim(); }
+			
 				for(int Loop_int = 0 ; Loop_int < length_int ;  Loop_int++ )
 					src_str = src_str + pad_str;
-				
-					//while ( src_str.length() < length_int )
-						
 			}
-
 			return src_str;
 		}
 	
 	public boolean startsWith( String StringToCheck, String StartsWithString )
-		{
-			return StringToCheck == null ? false : StringToCheck.startsWith( StartsWithString );
+		{ return StringToCheck == null ? false : StringToCheck.startsWith( StartsWithString );
 		}
 
 	public static boolean StringNotEmptyAndNotNull(String Value_str)
-	   {
-	   	return (Value_str != null)
+	   { return (Value_str != null)
 	   		&& (!"".equals(Value_str));
 	   }
 
@@ -112,61 +95,55 @@ public class StringUtils
 			char c;
 	
 			for ( int i = 0; i < len; i++ )
-			{
-				c = content.charAt( i );
-
-				// HTML Special Chars
-				if ( c == '"' )
-					sb.append( "&quot;" );
-				
-				else 
-				if ( c == '&' )
-					sb.append( "&amp;" );
-				
-				else 
-				if ( c == '<' )
-					sb.append( "&lt;" );
-				
-				else 
-				if ( c == '>' )
-					sb.append( "&gt;" );
-				
-				else 
-				if ( c == '\n' )
-				sb.append( "<br>" );
-				
-				else
-				if ( c == '\r' )
-					;	// do nothing
-				
-				else
-				{
-					int ci = 0xffff & c;
+				{  c = content.charAt( i );
+	
+					// HTML Special Chars
+					if ( c == '"' )
+						sb.append( "&quot;" );
 					
-					if ( ci < 160 )
-						// nothing special only 7 Bit
-						sb.append( c );
+					else 
+					if ( c == '&' )
+						sb.append( "&amp;" );
+					
+					else 
+					if ( c == '<' )
+						sb.append( "&lt;" );
+					
+					else 
+					if ( c == '>' )
+						sb.append( "&gt;" );
+					
+					else 
+					if ( c == '\n' )
+						sb.append( "<br>" );
+					
+//					else
+//					if ( c == '\r' )
+//						;	// do nothing
 					
 					else
-					{
-						// Not 7 Bit use the unicode system
-						sb.append( "&#" );
-						sb.append( new Integer( ci ).toString() );
-						sb.append( ';' );
-					}
+						{ int ci = 0xffff & c;
+						
+						if ( ci < 160 )
+							sb.append( c );
+						
+						else
+							{ // Not 7 Bit use the unicode system
+							sb.append( "&#" );
+							sb.append( new Integer( ci ).toString() );
+							sb.append( ';' );
+							}
+						}
 				}
-			}
 			
 			return sb.toString();
 		}
 	
 	public static String encodeURIComponent(String s) 
-		{
-		    String result;
+		{ String result;
 	
 		    try 
-		    {
-		        result = URLEncoder.encode(s, "UTF-8")
+		    	{ result = URLEncoder.encode(s, "UTF-8")
 		                .replaceAll("\\+", "%20")
 		                .replaceAll("\\%21", "!")
 		                .replaceAll("\\%27", "'")
@@ -175,65 +152,42 @@ public class StringUtils
 		                .replaceAll("\\%7E", "~")
 		                .replaceAll( "\\%3A", ":" )
 		                .replaceAll( "\\%2F", "/" );
-		    } 
+		    	} 
 
 		    catch (UnsupportedEncodingException e) 
-		    {
-		        result = s;
-		    }
+		    	{ result = s;  }
 
 		    return result;
 		}
 	
-//	public static String toTitleCase(String input_str) 
-//	{
-//	    StringBuilder titleCase = new StringBuilder();
-//	    boolean nextTitleCase = true;
-//
-//	    for (char c : input_str.toCharArray()) {
-//	        if (Character.isSpaceChar(c))  // if this char is a space, set the boolean to capitalize the next character
-//	        	{
-//	            nextTitleCase = true;
-//	        	} 
-//	        else if (nextTitleCase) 
-//	        	{
-//	            c = Character.toTitleCase(c);
-//	            nextTitleCase = false;
-//	        	}
-//	        else
-//	        	{// not a char to capitalize and not a space, then set it to lower case
-//	        	
-//	        	}
-//	        
-//	        titleCase.append(c);
-//	    }
-//
-//	    return titleCase.toString();
-//	}
 
 	public static String toTitleCase(String s) 
-	{
-		// this function - credit to scottb on https://stackoverflow.com/questions/1086123/string-conversion-to-title-case
-		// will not work with specialized rules, eg. surnames such as McNamara or MacDonald.
-		// TODO: issue with street address parts like nw, se etc. 
-		
-	    final String ACTIONABLE_DELIMITERS = " -/"; // these cause the character following
-	                                                 // to be capitalized
+		{   // this function - credit to scottb on https://stackoverflow.com/questions/1086123/string-conversion-to-title-case
+			// will not work with specialized rules, eg. surnames such as McNamara or MacDonald.
+			// TODO: issue with street address parts like nw, se etc. 
+			
+		    final String ACTIONABLE_DELIMITERS = " -/"; // these cause the character following
+		                                                 // to be capitalized
+	
+		    StringBuilder sb = new StringBuilder();
+		    boolean capNext = true;
+	
+		    for (char c : s.toCharArray()) 
+		    	{ c = (capNext)
+		                ? Character.toUpperCase(c)
+		                : Character.toLowerCase(c);
+		        sb.append(c);
+		        capNext = (ACTIONABLE_DELIMITERS.indexOf((int) c) >= 0); // explicit cast not needed
+		    	}
+	
+		    return sb.toString();
+		}
+	
+	/* -------------------------------- Getters & Setters  -------------------------------- */
 
-	    StringBuilder sb = new StringBuilder();
-	    boolean capNext = true;
 
-	    for (char c : s.toCharArray()) 
-	    	{
-	        c = (capNext)
-	                ? Character.toUpperCase(c)
-	                : Character.toLowerCase(c);
-	        sb.append(c);
-	        capNext = (ACTIONABLE_DELIMITERS.indexOf((int) c) >= 0); // explicit cast not needed
-	    	}
 
-	    return sb.toString();
-	}
+	/* ------------------------------ End Getters & Setters  ------------------------------ */
 }
 
 
