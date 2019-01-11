@@ -2,18 +2,26 @@ package net.wg.utils;
 
 public class PhoneUtils
 {
-  public static boolean isTollFreeNPA(String PhoneNumber)
-	   {
-	       String npa = getNPA(PhoneNumber);
 	
-	   return "800".equals( npa )
-	   || "888".equals( npa )
-	   || "877".equals( npa )
-	   || "866".equals( npa )
-	   || "855".equals( npa )
-	   || "844".equals( npa )
-	   || "833".equals( npa );
-	   }
+  public static void main(String[] args) 
+	{
+	  // Self Tester
+	  PhoneUtils PU = new PhoneUtils();
+	  
+	  System.out.println("NPA of 18005551212: " + PhoneUtils.getNPA("18005551212"));
+	  System.out.println("NPA of  8005551212: " + PhoneUtils.getNPA("8005551212"));
+	  System.out.println("NPA of     5551212: " + PhoneUtils.getNPA("5551212"));
+	  
+	  System.out.println("NXX of 18005551212: " + PhoneUtils.getNXX("18005551212"));
+	  System.out.println("NXX of  8005551212: " + PhoneUtils.getNXX("8005551212"));
+	  System.out.println("NXX of     5551212: " + PhoneUtils.getNXX("5551212"));
+	  
+	  System.out.println("is 18005551212 Tollfree number? " + PhoneUtils.isTollFreeNPA("18005551212"));
+	  System.out.println("is  8005551212 Tollfree number? " + PhoneUtils.isTollFreeNPA("8005551212"));
+	  System.out.println("is     5551212 Tollfree number? " + PhoneUtils.isTollFreeNPA("5551212"));
+	  
+	}
+  
 
    public static boolean is700Number(String PhoneNumber)
 	   {
@@ -77,15 +85,7 @@ public class PhoneUtils
 		   return true;	   
 	   }
    
-   public static String getNPA(String PhoneNumber)
-	   {
-	       return ( PhoneNumber + "   " ).substring( 0, 3 );
-	   }
-	
-   public static String getNXX(String PhoneNumber)
-	   {
-	       return (PhoneNumber + "      " ) .substring( 3, 6 );
-	   }
+   
    
    public String getNpaNxx(String PhoneNumber)
 		{
@@ -191,4 +191,50 @@ public class PhoneUtils
 		return s.toString();
 	}
 
+   
+   /* -------------------------------- Getters & Setters  -------------------------------- */
+
+   public static boolean isTollFreeNPA(String PhoneNumber)
+	   {
+	   String npa = getNPA(PhoneNumber);
+	
+	   return "800".equals( npa )
+	   || "888".equals( npa )
+	   || "877".equals( npa )
+	   || "866".equals( npa )
+	   || "855".equals( npa )
+	   || "844".equals( npa )
+	   || "833".equals( npa );
+	   }
+   
+   public static String getNPA(String PhoneNumber)
+   {
+   	String PN_str = PhoneNumber.trim();
+   	
+   	if (PN_str.length()==11)	
+   		return ( PhoneNumber + "   " ).substring( 1, 4 );
+   	
+   	if (PN_str.length()==10)	// area code + 7 digit number
+   		return ( PhoneNumber + "   " ).substring( 0, 3 );
+   	else
+   		return "";
+   }
+
+public static String getNXX(String PhoneNumber)
+   {
+   	String PN_str = PhoneNumber.trim();
+   	
+   	if (PN_str.length()==11)	
+   		return ( PhoneNumber + "   " ).substring( 4, 7 );
+   	
+   	if (PN_str.length()==10)	// area code + 7 digit number
+   		return ( PhoneNumber + "   " ).substring( 3, 6 );
+   	
+   	if (PN_str.length()==7)	// area code + 7 digit number
+   		return ( PhoneNumber + "   " ).substring( 0, 3 );
+   	else
+   		return "";
+   }
+
+   /* ------------------------------ End Getters & Setters  ------------------------------ */
 }
