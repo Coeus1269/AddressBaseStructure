@@ -47,3 +47,5 @@ Incomplete ToDo's
   State:
     state spelling errors check, compare state text with misspelled list
     ability to find state based on zip code
+    
+This project has dependency on PhoneUtils and StringUtils from the Utils Project

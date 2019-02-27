@@ -1,4 +1,4 @@
-package net.wg.address;
+package FullRelationalAddressStructure;
 
 import net.wg.utils.FileUtils;
 // import net.wg.utils.StringUtils;

@@ -1,6 +1,6 @@
-package net.wg.address;
+package FullRelationalAddressStructure;
 
-import net.wg.utils.StringUtils;
+import StringUtils.StringUtils;
 
 public class US_ZipCode
 {
