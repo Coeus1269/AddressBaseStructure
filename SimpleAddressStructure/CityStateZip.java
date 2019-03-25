@@ -3,18 +3,62 @@ package SimpleAddressStructure;
 import FullRelationalAddressStructure.US_State;
 import FullRelationalAddressStructure.US_ZipCode;
 
+import java.util.List;
+
 public class CityStateZip 
 {
 	private int CityStateZip_ID;
 	private String cityName_str;
 	private US_State state_str;
-	private US_State stateAbbr_str;		// State Abbreveation
+	private US_State stateAbbr_str;		// State Abbreviation
 	private US_ZipCode zipCode_str;	
 	private String county_str;			// TODO need county class?
 	
 	public static void main(String[] args) 
 		{
 		}
+	public List<String> PullUniqueZipCodesList()
+	{
+		// Return a Sting list of Unique Zipcodes for interface display and user selection
+		
+		/* SELECT [Zipcode_str]
+			  FROM [CityStateZip]
+			  where [Decommisioned] = 0
+			  group by [Zipcode_str]
+			  order by [Zipcode_str]
+		 */
+		
+		return null;		
+	}
+	
+	public List<String> PullUniqueStatesList()
+	{
+		// Return a Sting list of Unique States for interface display and user selection
+		
+		/* SELECT [State_str], [StateAbbr_str]
+		  FROM [CityStateZip]
+		  where [Decommisioned] = 0
+		  group by [State_str], [StateAbbr_str]
+		  order by [State_str], [StateAbbr_str]
+	 */
+		
+		return null;		
+	}
+	
+	public List<String> PullUniqueCitiesList()
+	{
+		// Return a Sting list of Unique Cities for interface display and user selection
+		
+		/* SELECT [City_str]
+		  FROM [CityStateZip]
+		  where [Decommisioned] = 0
+		  group by [City_str]
+		  order by [City_str]
+	 */
+		
+		
+		return null;		
+	}
 
 	/* -------------------------------- Getters & Setters  -------------------------------- */
 	
