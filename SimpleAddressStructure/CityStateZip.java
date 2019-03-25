@@ -8,6 +8,7 @@ public class CityStateZip
 	private int CityStateZip_ID;
 	private String cityName_str;
 	private US_State state_str;
+	private US_State stateAbbr_str;		// State Abbreveation
 	private US_ZipCode zipCode_str;	
 	private String county_str;			// TODO need county class?
 	
@@ -28,6 +29,12 @@ public class CityStateZip
 
 	public void setState_str(US_State state_str) 
 		{ this.state_str = state_str; }
+
+	public US_State getStateAbbr_str() 
+		{ return stateAbbr_str; }
+
+	public void setStateAbbr_str(US_State stateAbbr_str) 
+		{ this.stateAbbr_str = stateAbbr_str; }
 
 	public US_ZipCode getZipCode_str() 
 		{ return zipCode_str; }
