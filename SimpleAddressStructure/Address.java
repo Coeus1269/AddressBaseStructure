@@ -2,6 +2,7 @@ package SimpleAddressStructure;
 
 public class Address 
 {
+	private int addressID; 				// primary key
 	private String Address1_str = "";
 	private String Address2_str = "";
 	private int CityStateZip_ID;
@@ -30,6 +31,12 @@ public class Address
 
 	public int getContact_ID() 
 		{ return Contact_ID; }
+
+	public int getAddressID() 
+		{ return addressID; }
+
+	public void setAddressID(int addressID) 
+		{ this.addressID = addressID; }
 
 	/* ------------------------------ End Getters & Setters  ------------------------------ */
 }

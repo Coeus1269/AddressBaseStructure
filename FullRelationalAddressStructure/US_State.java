@@ -8,7 +8,7 @@ import net.wg.utils.FileUtils;
 public class US_State 
 {
 	private String StateID;
-	private int stateIndex = 0;	// the index is the reference to the state name and abbreviation, not storing these strings.
+	private int stateIndex = 0;		// the index is the reference to the state name and abbreviation, not storing these strings.
 	private String StatesDataFile = "Data/US_States.txt";
 	private static String[][] AmericanStates = null; // format = Abbreviation, State name
 	// the StatesDataFile file has to keep the same order as the AmericanStates variable
@@ -25,9 +25,14 @@ public class US_State
 	private String stateFlagURL;
 
 	// TODO state spelling errors check	
+	// TODO compare state text with misspelled list
 	// TODO state data file DB
 	// TODO ability to find state based on zip code
-	// TODO compare state text with misspelled list
+	
+	/*
+	 This version initially was experimenting with having the sates in a text file that is loaded into each class, rather than a database record.
+	 */
+
 	
 	public static void main( String...args )
 		{
@@ -129,125 +134,88 @@ public class US_State
 	/* ------------------------------ Getters & Setters  ------------------------------ */
 
 	public String getStateID() 
-		{
-			return StateID;
-		}
+		{ return StateID; }
 
 	public void setStateID(String stateID) 
-		{
-			StateID = stateID;
-		}
+		{ StateID = stateID; }
 
 	public int getStateIndex() 
-		{
-			return stateIndex;
-		}
+		{ return stateIndex; }
 
 	public void setStateIndex(int stateIndex) 
-		{
-			this.stateIndex = stateIndex;
-		}
+		{ this.stateIndex = stateIndex; }
 
 	public String getStateName() 
-		{
-			return AmericanStates[stateIndex][1];
-		}
+		{ return AmericanStates[stateIndex][1]; }
 	
 	public void setStateName(String StateName) 
-		{
-			//this.stateName = stateName;
-			stateIndex = getAmericanStateNameIndex(StateName);
+		{ //this.stateName = stateName;
+		stateIndex = getAmericanStateNameIndex(StateName);
 		}
 	
 	public String getStateAbbreviation() 
-		{
-		return AmericanStates[stateIndex][0];
-			//return AmericanStates[stateIndex];
+		{ return AmericanStates[stateIndex][0];
+		//return AmericanStates[stateIndex];
 		}
 	
 	public void setStateAbbreviation(String StateAbbreviation) 
-		{
-			//this.stateAbbreviation = stateAbbreviation;
-			stateIndex = getAmericanStatesIndex(StateAbbreviation);
+		{ //this.stateAbbreviation = stateAbbreviation;
+		stateIndex = getAmericanStatesIndex(StateAbbreviation);
 		}
 	
 	public String getStateMotto() 
-		{
-			return stateMotto;
-		}
+		{ return stateMotto; }
 	
 	public void setStateMotto(String stateMotto) 
-		{
-			this.stateMotto = stateMotto;
-		}
+		{ this.stateMotto = stateMotto; }
 	
 	public String getStateSong() 
-		{
-			return stateSong;
-		}
+		{ return stateSong; }
 	
 	public void setStateSong(String stateSong) 
-		{
-			this.stateSong = stateSong;
-		}
+		{ this.stateSong = stateSong; }
 	
 	public String getStateFlagURL() 
-		{
-			return stateFlagURL;
-		}
+		{ return stateFlagURL; }
 	
 	public void setStateFlagURL(String stateFlagURL) 
-		{
-			this.stateFlagURL = stateFlagURL;
-		}
+		{ this.stateFlagURL = stateFlagURL; }
 
-	public String getStatesDataFile() {
-		return StatesDataFile;
-	}
+	public String getStatesDataFile() 
+		{ return StatesDataFile; }
 
-	public void setStatesDataFile(String statesDataFile) {
-		StatesDataFile = statesDataFile;
-	}
+	public void setStatesDataFile(String statesDataFile) 
+		{ StatesDataFile = statesDataFile; }
 
-	public String getStateNickname() {
-		return stateNickname;
-	}
+	public String getStateNickname() 
+		{ return stateNickname;	}
 
-	public void setStateNickname(String stateNickname) {
-		this.stateNickname = stateNickname;
-	}
+	public void setStateNickname(String stateNickname) 
+		{ this.stateNickname = stateNickname; }
 
-	public String getStateCapitol() {
-		return stateCapitol;
-	}
+	public String getStateCapitol() 
+		{ return stateCapitol; }
 
-	public void setStateCapitol(String stateCapitol) {
-		this.stateCapitol = stateCapitol;
-	}
+	public void setStateCapitol(String stateCapitol) 
+		{ this.stateCapitol = stateCapitol; }
 
-	public String getStateSongURl() {
-		return stateSongURl;
-	}
+	public String getStateSongURl() 
+		{ return stateSongURl; }
 
-	public void setStateSongURl(String stateSongURl) {
-		this.stateSongURl = stateSongURl;
-	}
+	public void setStateSongURl(String stateSongURl) 
+		{ this.stateSongURl = stateSongURl; }
 
-	public String getStateBirdName() {
-		return stateBirdName;
-	}
+	public String getStateBirdName() 
+		{ return stateBirdName; }
 
-	public void setStateBirdName(String stateBirdName) {
-		this.stateBirdName = stateBirdName;
-	}
+	public void setStateBirdName(String stateBirdName) 
+		{ this.stateBirdName = stateBirdName; }
 
-	public String getStateBirdURL() {
-		return stateBirdURL;
-	}
+	public String getStateBirdURL() 
+		{ return stateBirdURL; }
 
-	public void setStateBirdURL(String stateBirdURL) {
-		this.stateBirdURL = stateBirdURL;
-	}
+	public void setStateBirdURL(String stateBirdURL) 
+		{ this.stateBirdURL = stateBirdURL;	}
 	
 	/* ------------------------------ End Getters & Setters  ------------------------------ */
 
